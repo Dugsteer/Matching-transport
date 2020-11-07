@@ -6,21 +6,26 @@ const orange = document.getElementById("orange");
 const blue = window.matchMedia("(max-width: 800px)");
 
 //Change Intropic
-function turnMe() {
-  orange.classList.add("turnOrange");
-  waterPour();
-  setTimeout(orangeOff, 4000);
+function returnBalloon(){
+  balloon.classList.remove('fly');
 }
 
-function orangeOff() {
-  orange.classList.remove("turnOrange");
+function liftMe() {
+  balloon.classList.add("fly");
+  setTimeout(returnBalloon, 4000);
+  balloonRise();
 }
 
-//Make sound of juice pouring
-function waterPour() {
-  const waterPouring = new Audio("sounds/water.mp3");
-  waterPouring.play();
+
+
+//Make sound of balloon
+
+function balloonRise() {
+  const balloonSound = new Audio("sounds/rise.mp3");
+  balloonSound.play();
 }
+
+
 
 // Show and hide about info
 function show() {
@@ -71,129 +76,129 @@ const sideBar = document.getElementById("sidebar");
 // Each image and word in a set array has the same data-framework number, in order to check for pairs.
 // The data-name is a string, which can be used in the second case as innerHTML.
 const set1 = [
-  { number: "1", name: "apple" },
+  { number: "1", name: "airplane" },
   {
     number: "1",
-    name: "<img src = 'img/apple.png' alt='apple' class='image'>",
+    name: "<img src = 'img/airplane.jpg' alt='airplane' class='image'>",
   },
-  { number: "2", name: "banana" },
+  { number: "2", name: "ambulance" },
   {
     number: "2",
-    name: "<img src = 'img/banana.png' alt='banana' class='image'>",
+    name: "<img src = 'img/ambulance.jpg' alt='ambulance' class='image'>",
   },
-  { number: "3", name: "bread" },
+  { number: "3", name: "balloon" },
   {
     number: "3",
-    name: "<img src = 'img/bread.png' alt='bread' class='image'>",
+    name: "<img src = 'img/balloon.jpg' alt='balloon' class='image'>",
   },
-  { number: "4", name: "burger" },
+  { number: "4", name: "bike" },
   {
     number: "4",
-    name: "<img src = 'img/burger.png' alt='burger' class='image'>",
+    name: "<img src = 'img/bike.jpg' alt='bike' class='image'>",
   },
-  { number: "5", name: "cake" },
+  { number: "5", name: "bus" },
   {
     number: "5",
-    name: "<img src = 'img/cake.png' alt='cake' class='image'>",
+    name: "<img src = 'img/bus.jpg' alt='bus' class='image'>",
   },
-  { number: "6", name: "carrot" },
+  { number: "6", name: "digger" },
   {
     number: "6",
-    name: "<img src = 'img/carrot.png' alt='carrot' class='image'>",
+    name: "<img src = 'img/digger.jpg' alt='digger' class='image'>",
   },
-  { number: "7", name: "chicken" },
+  { number: "7", name: "e-car" },
   {
     number: "7",
-    name: "<img src = 'img/chicken.png' alt='chicken' class='image'>",
+    name: "<img src = 'img/e-car.jpg' alt='e-car' class='image'>",
   },
-  { number: "8", name: "chips" },
+  { number: "8", name: "firetruck" },
   {
     number: "8",
-    name: "<img src = 'img/chips.png' alt='chips' class='image'>",
+    name: "<img src = 'img/firetruck.jpg' alt='firetruck' class='image'>",
   },
 ];
 const set2 = [
-  { number: "9", name: "donut" },
+  { number: "9", name: "helicopter" },
   {
     number: "9",
-    name: "<img src = 'img/donut.png' alt='donut' class='image'>",
+    name: "<img src = 'img/helicopter.jpg' alt='helicopter' class='image'>",
   },
-  { number: "10", name: "egg" },
+  { number: "10", name: "limousine" },
   {
     number: "10",
-    name: "<img src = 'img/egg.png' alt='egg' class='image'>",
+    name: "<img src = 'img/limousine.jpg' alt='limousine' class='image'>",
   },
-  { number: "11", name: "fish" },
+  { number: "11", name: "motorbike" },
   {
     number: "11",
-    name: "<img src = 'img/fish.png' alt='fish' class='image'>",
+    name: "<img src = 'img/motorbike.jpg' alt='motorbike' class='image'>",
   },
-  { number: "12", name: "grapes" },
+  { number: "12", name: "police-car" },
   {
     number: "12",
-    name: "<img src = 'img/grapes.png' alt='grapes' class='image'>",
+    name: "<img src = 'img/police-car.jpg' alt='police-car' class='image'>",
   },
-  { number: "13", name: "honey" },
+  { number: "13", name: "sailboat" },
   {
     number: "13",
-    name: "<img src = 'img/honey.png' alt='honey' class='image'>",
+    name: "<img src = 'img/sailboat.jpg' alt='sailboat' class='image'>",
   },
-  { number: "14", name: "ice-cream" },
+  { number: "14", name: "school-bus" },
   {
     number: "14",
-    name: "<img src = 'img/ice-cream.png' alt='ice-cream' class='image'>",
+    name: "<img src = 'img/school-bus.jpg' alt='school-bus' class='image'>",
   },
-  { number: "15", name: "jam" },
+  { number: "15", name: "ship" },
   {
     number: "15",
-    name: "<img src = 'img/jam.png' alt='jam' class='image'>",
+    name: "<img src = 'img/ship.jpg' alt='ship' class='image'>",
   },
-  { number: "16", name: "kiwi" },
+  { number: "16", name: "speedboat" },
   {
     number: "16",
-    name: "<img src = 'img/kiwi.png' alt='kiwi' class='image'>",
+    name: "<img src = 'img/speedboat.jpg' alt='speedboat' class='image'>",
   },
 ];
 const set3 = [
-  { number: "17", name: "lettuce" },
+  { number: "17", name: "submarine" },
   {
     number: "17",
-    name: "<img src = 'img/lettuce.png' alt='lettuce' class='image'>",
+    name: "<img src = 'img/submarine.jpg' alt='submarine' class='image'>",
   },
-  { number: "18", name: "mushrooms" },
+  { number: "18", name: "taxi" },
   {
     number: "18",
-    name: "<img src = 'img/mushrooms.png' alt='mushrooms' class='image'>",
+    name: "<img src = 'img/taxi.jpg' alt='taxi' class='image'>",
   },
-  { number: "19", name: "nuts" },
+  { number: "19", name: "train" },
   {
     number: "19",
-    name: "<img src = 'img/nuts.png' alt='nuts' class='image'>",
+    name: "<img src = 'img/train.jpg' alt='train' class='image'>",
   },
-  { number: "20", name: "onion" },
+  { number: "20", name: "truck" },
   {
     number: "20",
-    name: "<img src = 'img/onion.png' alt='onion' class='image'>",
+    name: "<img src = 'img/truck.jpg' alt='truck' class='image'>",
   },
-  { number: "21", name: "pizza" },
+  { number: "21", name: "airplane" },
   {
     number: "21",
-    name: "<img src = 'img/pizza.png' alt='pizza' class='image'>",
+    name: "<img src = 'img/airplane.jpg' alt='airplane' class='image'>",
   },
-  { number: "22", name: "potatoes" },
+  { number: "22", name: "bike" },
   {
     number: "22",
-    name: "<img src = 'img/potatoes.png' alt='potatoes' class='image'>",
+    name: "<img src = 'img/bike.jpg' alt='bike' class='image'>",
   },
-  { number: "23", name: "spaghetti" },
+  { number: "23", name: "firetruck" },
   {
     number: "23",
-    name: "<img src = 'img/spaghetti.png' alt='spaghetti' class='image'>",
+    name: "<img src = 'img/firetruck.jpg' alt='firetruck' class='image'>",
   },
-  { number: "24", name: "tomato" },
+  { number: "24", name: "motorbike" },
   {
     number: "24",
-    name: "<img src = 'img/tomato.png' alt='tomato' class='image'>",
+    name: "<img src = 'img/motorbike.jpg' alt='motorbike' class='image'>",
   },
 ];
 
@@ -244,7 +249,7 @@ function playGame(array) {
     card.classList.add("card");
     //  Include the data-famework (data.number) of the cards so they can be checked plus the necessary HTML.
 
-    card.innerHTML = `<div class="memory-card" tabindex=0 data-framework="${data.number}"><div class="front-face">${data.name}</div><div class="back-face"><img src = "img/basket.svg" alt="picture of a basket of food" class="imgBg smaller" id="imgBg"></div></div>`;
+    card.innerHTML = `<div class="memory-card" tabindex=0 data-framework="${data.number}"><div class="front-face">${data.name}</div><div class="back-face"><img src = "img/car_bg.png" alt="picture of a car" class="imgBg smaller" id="imgBg"></div></div>`;
 
     // Append the card divs to the game container so they appear on the page.
     gameContainer.appendChild(card);

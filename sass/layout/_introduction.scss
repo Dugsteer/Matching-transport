@@ -50,13 +50,14 @@
         // width: 17vw;
         width: 200px;
         // height: 17vw;
-        height: 280px;
+        height: 300px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         align-self: center;
         margin-bottom: 2rem;
         border-radius: 3px;
+        background-color: $color-blue;
         cursor: pointer;
         box-shadow: 3px 3px 3px rgba(0,0,0, 0.4);
 
@@ -74,6 +75,8 @@
 
      
     }
+
+  
 
     &__text{
         width: 60%;
@@ -143,101 +146,38 @@
     color: $color-blue;
 }
 
-.bugflash {
-    position: absolute;
-    transform: rotate(-20deg);
-    display: none;
-}
 
-.bugflash img{
-    width: 100%;
-    height: 100%;
-}
-
-.bugheading {
+.balloon {
     position: absolute;
-    width: 285px;
-    height: 80px;
-    padding: 0;
-    margin: 0;
-    top: 30%;
-    left:20%;
-    z-index: 3;
-    font-family: Bangers;
-    color: $color-yellow;
+    top: 25px;
+    left: 35px;
     
-    font-size: 5rem;
 
-    @media only screen and(max-width:$bp-large){
-        left: 25%;
-    }
-
-    @media only screen and(max-width:$bp-large){
-        left: 25%;
+    & img{
+        height: 80%;
+        width: 80%;
     }
 }
 
-.orange {
-    position: absolute;
-    left: 40px;
-    top: 55px;
-    height: 50%;
-    width: 70%;
-    
+.fly {
+    animation: flyup 3s cubic-bezier(.17,.67,.86,.17) forwards;
 }
 
-.turnOrange {
-    animation: rotater 4s ease-in-out infinite;
-}
-
-@keyframes rotater {
+@keyframes flyup {
     0% {
-        transform: rotate(0deg);
+        transform: translate(0, 0);
+    }
+    33% {
+        transform: translate(160px, -100px);
+    }
+    66% {
+        transform: translate(200px, -200px);
+        opacity: 1;
     }
     100% {
-        transform: rotate(7200deg);
-    }
-}
-
-.bugbutton {
-    position: absolute;
-    left: 35%;
-    top: 60%;
-    height: 30px;
-    width: 120px;
-    border-radius: 8px;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 2rem;
-    color: #000;
-    background-color: #fff;
-    box-shadow: $box-shadow-large;
-    cursor: pointer;
-
-}
-
-.bugvisible {
-    display: block;
-}
-
-.bugbutton:hover {
-    transform: translateY(2px);
-    box-shadow: $box-shadow-small;
-}
-.links {
-    margin-top: 3rem;
-}
-
-.rightmove {
-    animation: goright 2s;
-}
-@keyframes goright {
-    0% {
-        transform: translateX(0);
+        transform: translate(260px, -500px);
+        opacity: 0;
     }
 
-    100% {
-        transform: translateX(4rem);
-    }
+    
 }
-

@@ -1,7 +1,7 @@
 {
-  "name": "matching-food",
+  "name": "matching-transport",
   "version": "1.0.0",
-  "description": "Food card matching game for esl lessons",
+  "description": "Transport card matching game for esl lessons",
   "main": "script.js",
   "devDependencies": {
     "autoprefixer": "^9.8.0",
